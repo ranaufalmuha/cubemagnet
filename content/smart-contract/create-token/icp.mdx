@@ -1,0 +1,31 @@
+---
+title: "Create Fungible Token (ICRC-1) on ICP"
+blockchain: "ICP"
+usecase: "Create Token"
+slug: "smart-contract/create-token/icp"
+---
+
+## 🎯 Goal
+
+Create a fungible token using the ICRC-1 standard on Internet Computer Protocol (ICP).
+
+## 🔧 Tools
+
+- Motoko
+- DFX (Canister SDK)
+- Plug Wallet
+
+## 🧠 Contract Example
+
+```bash
+import Token "canister:icrc1";
+actor {
+  public func mintToken() : async () {
+    await Token.icrc1_transfer(...);
+  }
+}
+```
+
+## 🚀 Deploy
+
+Use `dfx deploy` and test with Plug wallet or local replica.
