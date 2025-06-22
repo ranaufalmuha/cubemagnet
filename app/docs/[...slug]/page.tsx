@@ -2,11 +2,10 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { getDocBySlug } from "@/lib/content";
 import rehypePrism from "rehype-prism-plus";
 
-export default async function DocPage({
-  params,
-}: {
-  params: { slug: string | string[] };
+export default async function DocPage(props: {
+  params: Promise<{ slug: string | string[] }>;
 }) {
+  const params = await props.params;
   const slugArray = Array.isArray(params.slug) ? params.slug : [params.slug];
   const path = slugArray.join("/");
 
